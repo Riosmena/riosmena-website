@@ -5,6 +5,9 @@ import { es } from "date-fns/locale";
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <html lang="es">
+      <head>
+        <title>José Riosmena</title>
+      </head>
       <body>
         <header>
           <nav>

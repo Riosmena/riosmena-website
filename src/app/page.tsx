@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Typewriter from "./components/Typewriter";
 
 const Home = () => (
   <div>
@@ -35,7 +36,18 @@ const Home = () => (
         <span>n</span>
         <span>a</span>
       </h1>
-      <p>Buenas :)</p>
+      <div>
+        <Typewriter
+          texts={[
+            "Ingeniero de Software",
+            "Atleta",
+            "Musico",
+            "Entusiasta de la tecnología",
+          ]}
+          speed={100}
+          delay={2000}
+        />
+      </div>
     </section>
 
     <section>
