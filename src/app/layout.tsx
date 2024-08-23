@@ -10,24 +10,24 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
           <nav>
             <ul>
               <li>
-                <a href="/">Home</a>
+                <a href="/">Inicio</a>
               </li>
               <li>
-                <a href="/about">About</a>
+                <a href="/about">Acerca de</a>
               </li>
               <li>
-                <a href="/projects">Projects</a>
+                <a href="/projects">Proyectos</a>
               </li>
               <li>
-                <a href="/contact">Contact</a>
+                <a href="/contact">Contacto</a>
               </li>
             </ul>
+            <div className="lang">
+              <a href="#change-language">ES</a>
+            </div>
           </nav>
         </header>
         <main>{children}</main>
-        <footer>
-          <p>&copy; 2024 José Riosmena</p>
-        </footer>
       </body>
     </html>
   );
