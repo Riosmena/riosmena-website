@@ -8,25 +8,55 @@ body {
 
 #introduction {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: left;
+  padding: 50px;
 }
 
-#introduction h4 {
-  font-family: 'Fjalla One', sans-serif;
-  font-size: 38px;
-  margin: 0;
-  margin-top: 80px;
-  margin-bottom: 15px;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+.text-container {
+  flex: 1;
+  margin-right: 20px;
   z-index: 2;
 }
 
-.image-container {
-  position: relative;;
+#typewriter {
+  position: absolute;
+  display: inline-block;
+  font-family: 'Consolas', monospace;
+  font-size: 24px;
+  color: #e0e0e0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #e0e0e0;
+}
+
+h4 span{
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 38px;
   margin: 0;
+  margin-top: 0;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  transition: transform 0.3s ease-in-out;
+  display: inline-flex;
+}
+
+h4 .space {
+  display: inline-block;
+  width: 10px;
+}
+
+h4 span:hover {
+  animation: tilt 0.3s ease-in-out;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bg-image {
@@ -34,11 +64,12 @@ body {
   transform: rotate(30deg);
   top: -80px;
   z-index: 0;
-  opacity: 0.5;
+  opacity: 0.4;
   left: 20%;
 }
 
 .center-image {
+  margin-top: 50px;
   border: 10px solid #121212;
   border-radius: 20px;
   transition: color 0.3s ease, transform 0.3s ease-in-out, opacity 0.3s ease, box-shadow 0.3s ease;
@@ -69,7 +100,7 @@ h1 .space {
 
 h1 span:hover {
   color:#ff4c4c;
-  transform: translateY(-35px);
+  transform: translateY(-25px);
   z-index: 3;
 }
 
@@ -184,4 +215,22 @@ a:hover {
 .lang a::after {
   content: "🎵";
   margin-left: 8px;
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }

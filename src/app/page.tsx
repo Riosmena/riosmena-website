@@ -11,41 +11,52 @@ const Home = () => (
       className="bg-image"
     />
     <section id="introduction">
-      <h4>Yo soy</h4>
+      <div className="text-container">
+        <h4>
+          <span>Y</span>
+          <span>o</span>
+          <span className="space"> </span>
+          <span>s</span>
+          <span>o</span>
+          <span>y</span>
+        </h4>
+        <h1>
+          <span>J</span>
+          <span>o</span>
+          <span>s</span>
+          <span>é</span>
+          <span className="space"> </span>
+          <span>R</span>
+          <span>i</span>
+          <span>o</span>
+          <span>s</span>
+          <span>m</span>
+          <span>e</span>
+          <span>n</span>
+          <span>a</span>
+        </h1>
+        <div id="typewriter">
+          <span>
+            <Typewriter
+              texts={[
+                "Ingeniero de Software",
+                "Atleta",
+                "Músico",
+                "Entusiasta de la tecnología",
+              ]}
+              speed={100}
+              delay={2000}
+            />
+          </span>
+        </div>
+      </div>
       <div className="image-container">
         <Image
           src="/images/hero.jpg"
           alt="Profile picture"
-          width={400}
-          height={400}
+          width={500}
+          height={500}
           className="center-image"
-        />
-      </div>
-      <h1>
-        <span>J</span>
-        <span>o</span>
-        <span>s</span>
-        <span>é</span>
-        <span className="space"> </span>
-        <span>R</span>
-        <span>i</span>
-        <span>o</span>
-        <span>s</span>
-        <span>m</span>
-        <span>e</span>
-        <span>n</span>
-        <span>a</span>
-      </h1>
-      <div>
-        <Typewriter
-          texts={[
-            "Ingeniero de Software",
-            "Atleta",
-            "Musico",
-            "Entusiasta de la tecnología",
-          ]}
-          speed={100}
-          delay={2000}
         />
       </div>
     </section>
