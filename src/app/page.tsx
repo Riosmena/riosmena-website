@@ -73,6 +73,16 @@ const Home = () => (
           tecnología, la música y los videojuegos. Me gustan mucho los deportes
           y la música.
         </p>
+        <div className="me-buttons">
+          <button>
+            <a href="/about">Saber más</a>
+          </button>
+          <button>
+            <a href="/documents/cv.pdf" target="_blank" rel="noreferrer">
+              Descargar mi curriculum
+            </a>
+          </button>
+        </div>
       </div>
     </section>
 

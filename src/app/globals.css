@@ -21,16 +21,44 @@ body {
   align-items: center;
   justify-content: center;
   text-align: left;
-  padding: 50px;
+  padding: 70px;
 }
 
 .me-images {
-  width: 1440px;
+  width: 2440px;
   height: 540px;
   background-image: url('../../public/images/fba.jpg');
   background-size: cover;
-  margin-right: 20px;
-  animation: slide 10s infinite;
+  z-index: 3;
+  margin-right: 90px;
+  animation: slide 30s infinite;
+  border: 10px solid #121212;
+  border-radius: 20px;
+  transition: color 0.3s ease, transform 0.3s ease-in-out, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+.me-images:hover {
+  transform: scale(1.05);
+}
+
+.about-text {
+  z-index: 3;
+}
+
+.about-text h2 {
+  font-family: 'Fjalla One', sans-serif;
+  color: #e0e0e0;
+  margin: 0;
+  margin-top: 0;
+  transition: text-shadow 0.3s ease, color 0.3s ease, transform 0.3s ease-in-out;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  display: inline-flex;
+}
+
+.about-text h2:hover {
+  color: #ff4c4c;
+  text-shadow: 0 0 15px rgba(255, 76, 76, 0.6);
+  transform: scale(1.05);
+  display: inline-flex;
 }
 
 @keyframes slide {
@@ -38,8 +66,24 @@ body {
     background-image: url('../../public/images/fba.jpg');
   }
 
-  50% {
+  16.666% {
+    background-image: url('../../public/images/guitar2.jpg');
+  }
+
+  33.33% {
+    background-image: url('../../public/images/fba3.jpg');
+  }
+
+  49.998% {
     background-image: url('../../public/images/drum.jpg');
+  }
+
+  66.664% {
+    background-image: url('../../public/images/fba2.jpg');
+  }
+
+  83.33% {
+    background-image: url('../../public/images/guitar1.jpg');
   }
 }
 
@@ -47,6 +91,33 @@ body {
   flex: 1;
   margin-right: 20px;
   z-index: 2;
+}
+
+.me-buttons { 
+  display: flex;
+  gap: 20px;
+}
+
+.me-buttons button {
+  background-color: #e0e0e0;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.me-buttons button:hover {
+  background-color: #ff4c4c;
+  box-shadow: 0 0 15px rgba(255, 76, 76, 0.8);
+  transform: scale(1.05);
+}
+
+.me-buttons button a {
+  text-decoration: none;
+  color: #121212;
 }
 
 #typewriter {
@@ -208,14 +279,15 @@ main {
 
 main h2 {
   font-family: 'Fjalla One', sans-serif;
-  font-size: 24px;
+  font-size: 60px;
   color: #4cc3ff; /* Azul eléctrico para contrastar */
   margin-bottom: 20px;
 }
 
 main p {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.6;
+  text-align: justify;
 }
 
 /* Efectos y detalles */
