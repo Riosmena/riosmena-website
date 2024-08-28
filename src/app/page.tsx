@@ -4,10 +4,10 @@ import Typewriter from "./components/Typewriter";
 const Home = () => (
   <div>
     <Image
-      src="/images/icons/guitar.png"
-      alt="guitar icon"
-      width={900}
-      height={900}
+      src="/images/icons/codigo.png"
+      alt="code icon"
+      width={700}
+      height={700}
       className="bg-image"
     />
     <section id="introduction">
@@ -60,13 +60,20 @@ const Home = () => (
         />
       </div>
     </section>
-
-    <section>
-      <h2>About</h2>
-      <p>
-        I am a software engineer from Mexico. I love to learn new things and
-        share knowledge with others.
-      </p>
+    <br></br>
+    <section id="about">
+      <div className="me-images"></div>
+      <div className="about-text">
+        <h2>Sobre mí</h2>
+        <p>
+          Soy un estudiante de ingeniería de software, me apasiona la tecnología
+          y su desarrollo. Me enfrento a nuevos retos con mucho entusiasmo y
+          dedicación para aprender y mejorar cada día. Soy muy creativo y me
+          gusta implementar nuevas ideas con mucha motivación hacia la
+          tecnología, la música y los videojuegos. Me gustan mucho los deportes
+          y la música.
+        </p>
+      </div>
     </section>
 
     <section>

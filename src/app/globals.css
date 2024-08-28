@@ -15,6 +15,34 @@ body {
   padding: 50px;
 }
 
+#about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding: 50px;
+}
+
+.me-images {
+  width: 1440px;
+  height: 540px;
+  background-image: url('../../public/images/fba.jpg');
+  background-size: cover;
+  margin-right: 20px;
+  animation: slide 10s infinite;
+}
+
+@keyframes slide {
+  0% {
+    background-image: url('../../public/images/fba.jpg');
+  }
+
+  50% {
+    background-image: url('../../public/images/drum.jpg');
+  }
+}
+
 .text-container {
   flex: 1;
   margin-right: 20px;
@@ -61,11 +89,10 @@ h4 span:hover {
 
 .bg-image {
   position: fixed;
-  transform: rotate(30deg);
-  top: -80px;
+  top: 20px;
   z-index: 0;
   opacity: 0.4;
-  left: 20%;
+  left: 25%;
 }
 
 .center-image {
