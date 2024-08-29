@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Typewriter from "./components/Typewriter";
+import ServiceCard from "./components/ServiceCard";
 
 const Home = () => (
   <div>
@@ -79,10 +80,67 @@ const Home = () => (
           </button>
           <button>
             <a href="/documents/cv.pdf" target="_blank" rel="noreferrer">
-              Descargar mi curriculum
+              Descargar mi currículum
             </a>
           </button>
         </div>
+      </div>
+    </section>
+
+    <section id="Technology">
+      <div className="tech-text">
+        <h2>
+          <span>T</span>
+          <span>e</span>
+          <span>c</span>
+          <span>n</span>
+          <span>o</span>
+          <span>l</span>
+          <span>o</span>
+          <span>g</span>
+          <span>í</span>
+          <span>a</span>
+          <span>s</span>
+        </h2>
+      </div>
+      <div className="services-container">
+        <ServiceCard
+          title="Desarrollo Web"
+          shortDescription="Desarrollo de sitios web modernos y responsivos."
+          tools={[
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js",
+            "Node.js",
+            "Express",
+          ]}
+        />
+        <ServiceCard
+          title="Aprendizaje Automático"
+          shortDescription="Creación de modelos predictivos y análisis de datos."
+          tools={[
+            "Python",
+            "TensorFlow",
+            "Keras",
+            "Scikit-learn",
+            "Pandas",
+            "Numpy",
+            "PyTorch",
+          ]}
+        />
+        <ServiceCard
+          title="Desarrollo de Videojuegos"
+          shortDescription="Desarrollo de videojuegos en 2D y 3D."
+          tools={["Unity", "C#", "Blender", "Unreal Engine", "Ursina"]}
+        />
+        <ServiceCard
+          title="DevOps"
+          shortDescription="Automatización de infraestructuras y despliegue continuo"
+          tools={["Docker", "Git", "GitHub"]}
+        />
       </div>
     </section>
 
