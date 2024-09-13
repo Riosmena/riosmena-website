@@ -138,8 +138,8 @@ const Home = () => (
         />
         <ServiceCard
           title="DevOps"
-          shortDescription="Automatización de infraestructuras y despliegue continuo"
-          tools={["Docker", "Git", "GitHub"]}
+          shortDescription="Automatización de infraestructuras y despliegue continuo."
+          tools={["Docker", "Git", "GitHub", "AWS"]}
         />
       </div>
     </section>

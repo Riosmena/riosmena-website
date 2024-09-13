@@ -5,7 +5,7 @@ import { useState } from "react";
 interface ServiceCardProps {
   title: string;
   shortDescription: string;
-  tools: string[]; // Lista de herramientas
+  tools: string[];
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
@@ -25,9 +25,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       onClick={handleClick}
     >
       <h3>{title}</h3>
-      <p>{shortDescription}</p>
       {isExpanded && (
         <div className="more-content">
+          <p>{shortDescription}</p>
           <h4>Herramientas:</h4>
           <ul>
             {tools.map((tool, index) => (
@@ -37,10 +37,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         </div>
       )}
       <style jsx>{`
-        .service-card {
-          position: relative;
-          cursor: pointer;
-          transition: all 0.3s ease;
+        .service-card.active {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(1.2);
+          width: 50%;
+          z-index: 1000;
         }
 
         .more-content {
@@ -53,8 +56,16 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         }
 
         ul {
-          list-style-type: disc;
-          padding-left: 20px;
+          list-style-type: none;
+          padding-left: 0px;
+        }
+
+        ul li {
+          border: 1px solid #444;
+          border-radius: 12px;
+          padding: 5px 10px;
+          margin-bottom: 5px;
+          background-color: #333;
         }
       `}</style>
     </div>
