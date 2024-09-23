@@ -143,20 +143,101 @@ const Home = () => (
         />
       </div>
     </section>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <section id="Projects">
+      <div className="projects-text">
+        <h2>
+          <span>P</span>
+          <span>r</span>
+          <span>o</span>
+          <span>y</span>
+          <span>e</span>
+          <span>c</span>
+          <span>t</span>
+          <span>o</span>
+          <span>s</span>
+        </h2>
+      </div>
 
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li>
-          <a href="/projects/1">Project 1</a>
-        </li>
-        <li>
-          <a href="/projects/2">Project 2</a>
-        </li>
-        <li>
-          <a href="/projects/3">Project 3</a>
-        </li>
-      </ul>
+      <div className="projects-button">
+        <button>
+          <a href="/projects">Ver todos</a>
+        </button>
+      </div>
+
+      <div className="projects-container">
+        <div className="project-card-container">
+          <article className="project-article">
+            <Image
+              src="/images/projects/Bullet-Hell.jpg"
+              alt="Bullet-Hell Project"
+              width={400}
+              height={200}
+              className="project-image"
+            />
+
+            <div className="card-data">
+              <h3 className="project-title">Bullet-Hell</h3>
+              <a
+                href="https://github.com/Riosmena/Bullet-Hell-Project"
+                className="project-link"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver más
+              </a>
+            </div>
+          </article>
+
+          <article className="project-article">
+            <Image
+              src="/images/projects/Black-Dot.jpg"
+              alt="Black Dot"
+              width={400}
+              height={200}
+              className="project-image"
+            />
+
+            <div className="card-data">
+              <h3 className="project-title">Black Dot</h3>
+              <a
+                href="https://github.com/Black-Dot-2024"
+                className="project-link"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver más
+              </a>
+            </div>
+          </article>
+
+          <article className="project-article">
+            <Image
+              src="/images/projects/Green-Circle.jpg"
+              alt="Green Circle"
+              width={400}
+              height={200}
+              className="project-image"
+            />
+
+            <div className="card-data">
+              <h3 className="project-title">Green Circle</h3>
+              <a
+                href="https://github.com/Iniciativa-Climatica-Mexico/Net-Zero-Citizens"
+                className="project-link"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver más
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
     <section>

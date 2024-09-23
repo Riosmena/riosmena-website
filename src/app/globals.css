@@ -385,7 +385,7 @@ a:hover {
 }
 
 .service-card:hover {
-  border: 10px solid  #4cc3ff;;
+  border: 10px solid  #4cc3ff;
   box-shadow: 0 0 15px rgba(76, 195, 255, 0.8);
   transform: scale(1.05);
 }
@@ -400,4 +400,184 @@ a:hover {
 .service-card p {
   color: #e0e0e0;
   font-size: 16px;
+}
+
+.projects-text {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.projects-text span {
+  font-family: 'Fjalla One', sans-serif;
+  color: #e0e0e0;
+  margin: 0;
+  margin-top: 0;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  display: inline-flex;
+}
+
+.projects-text span:hover {
+  color: #4cc3ff;
+  animation: jump 0.3s ease-in-out forwards;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.projects-container {
+  display: grid;
+  place-items: center;
+  margin-inline: 1.5rem;
+  padding-block: 4rem;
+}
+
+ .project-card-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  z-index: 3;
+}
+
+
+.project-article {
+  position: relative; 
+  overflow: hidden;
+}
+
+.project-image {
+  width: 400px;
+  height: 100%;
+  border-radius: 1rem;
+  border: #121212 1px solid;
+  transition: box-shadow 0.3s ease;
+}
+
+.project-image:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.card-data {
+  width: 280px;
+  background-color: #ff4c4c;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
+  border-radius: 1rem;
+  position: absolute;
+  bottom: -9rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  border: #121212 10px solid;
+  opacity: 0;
+  transition: opacity 1s 1s;
+}
+
+.project-article:hover .card-data {
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.project-article:hover {
+  animation: remove-overflow 2s forwards;
+}
+
+@keyframes show-data {
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(-7rem);
+  }
+}
+
+@keyframes remove-overflow {
+  to {
+    overflow: initial;
+  }
+}
+
+.project-article:not(:hover) {
+  animation: show-overflow 2s forwards;
+}
+
+.project-article:not(:hover) .card-data{
+  animation: remove-data 1s forwards;
+}
+
+@keyframes remove-data {
+  0% {
+    transform: translateY(-7rem);
+  }
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(0.5rem);
+  }
+}
+
+@keyframes show-overflow {
+  0% {
+    overflow: initial;
+    pointer-events: none;
+  }
+  50% {
+    overflow: hidden;
+  }
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.project-link {
+  text-decoration: none;
+  font-size: small;
+  color: #e0e0e0;
+  font-weight: 700;
+}
+
+.projects-button { 
+  display: flex;
+  justify-content: center;;
+}
+
+.projects-button button {
+  background-color: #e0e0e0;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  z-index: 3;
+}
+
+.projects-button button:hover {
+  background-color: #4cc3ff;
+  box-shadow: 0 0 15px rgba(76, 195, 255, 0.8);
+  transform: scale(1.05);
+}
+
+.projects-button button a {
+  text-decoration: none;
+  color: #121212;
 }
