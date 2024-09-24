@@ -36,20 +36,20 @@ const Home = () => (
           <span>n</span>
           <span>a</span>
         </h1>
-        <div id="typewriter">
-          <span>
-            <Typewriter
-              texts={[
-                "Ingeniero de Software",
-                "Atleta",
-                "Músico",
-                "Entusiasta de la tecnología",
-              ]}
-              speed={100}
-              delay={2000}
-            />
-          </span>
-        </div>
+      </div>
+      <div id="typewriter">
+        <span>
+          <Typewriter
+            texts={[
+              "Ingeniero de Software",
+              "Atleta",
+              "Músico",
+              "Entusiasta de la tecnología",
+            ]}
+            speed={100}
+            delay={2000}
+          />
+        </span>
       </div>
       <div className="image-container">
         <Image
