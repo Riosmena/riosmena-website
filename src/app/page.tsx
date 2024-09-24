@@ -240,9 +240,27 @@ const Home = () => (
       </div>
     </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>You can reach me at: </p>
+    <section id="contact">
+      <div className="contact-container">
+        <p>Me encantaría trabajar contigo.</p>
+        <div className="contact-title">
+          <h2>
+            <span>C</span>
+            <span>o</span>
+            <span>n</span>
+            <span>t</span>
+            <span>á</span>
+            <span>c</span>
+            <span>t</span>
+            <span>a</span>
+            <span>m</span>
+            <span>e</span>
+          </h2>
+        </div>
+        <button>
+          <a href="/contact">Envíame un mensaje</a>
+        </button>
+      </div>
     </section>
   </div>
 );
