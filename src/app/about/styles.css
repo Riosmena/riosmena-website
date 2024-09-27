@@ -1,0 +1,8 @@
+.bg-image {
+    position: fixed;
+    top: 20px;
+    z-index: 0;
+    opacity: 0.4;
+    left: 25%;
+    transform: rotate(20deg);
+  }
