@@ -11,6 +11,11 @@ interface Card {
   description: string;
 }
 
+interface Skill {
+  name: string;
+  characteristics: string[];
+}
+
 const certifications: Card[] = [
   {
     image: "/images/others/NVIDIA.png",
@@ -32,6 +37,122 @@ const certifications: Card[] = [
   },
 ];
 
+const techskills: Skill[] = [
+  {
+    name: "Programación",
+    characteristics: [
+      "Python",
+      "Java",
+      "C",
+      "C++",
+      "Javascript",
+      "Typescript",
+      "Perl",
+      "Dxl",
+      "Bash",
+      "R",
+      "Matlab",
+      "C#",
+      "Html",
+      "Css",
+      "Sql",
+      "Php",
+      "Kotlin",
+      "Swift",
+    ],
+  },
+  {
+    name: "Marcos de trabajo",
+    characteristics: [
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Express",
+      "Flask",
+      "Odoo",
+    ],
+  },
+  {
+    name: "Bases de datos",
+    characteristics: ["MySQL", "MariaDB", "PostgreSQL", "DOORS"],
+  },
+  {
+    name: "Herramientas",
+    characteristics: [
+      "Git",
+      "GitHub",
+      "AWS",
+      "Docker",
+      "Smartsheet",
+      "Microsoft Office",
+      "Unity",
+      "Figma",
+      "Visual Studio Code",
+      "Android Studio",
+      "Xcode",
+    ],
+  },
+  {
+    name: "Metodologías",
+    characteristics: ["SCRUM", "CMMI", "Ágil", "Lean"],
+  },
+];
+
+const softskills: Skill[] = [
+  {
+    name: "Comunicación",
+    characteristics: [
+      "Escucha activa",
+      "Empatía",
+      "Claridad",
+      "Negociación",
+      "Presentación",
+    ],
+  },
+  {
+    name: "Trabajo en equipo",
+    characteristics: [
+      "Liderazgo",
+      "Colaboración",
+      "Resolución de conflictos",
+      "Comunicación efectiva",
+    ],
+  },
+  {
+    name: "Resolución de problemas",
+    characteristics: [
+      "Adaptabilidad",
+      "Flexibilidad",
+      "Organización",
+      "Resiliencia",
+    ],
+  },
+  {
+    name: "Creatividad",
+    characteristics: ["Pensamiento crítico", "Innovación", "Originalidad"],
+  },
+  {
+    name: "Gestión del tiempo",
+    characteristics: [
+      "Organización",
+      "Priorización",
+      "Eficiencia",
+      "Puntualidad",
+    ],
+  },
+];
+
+const languages: Skill[] = [
+  {
+    name: "Avanzado",
+    characteristics: ["Español", "Inglés"],
+  },
+  {
+    name: "Básico",
+    characteristics: ["Italiano"],
+  },
+];
+
 const About: React.FC = () => {
   const [tab, setTab] = useState<
     "professional" | "academic" | "certifications"
@@ -41,6 +162,14 @@ const About: React.FC = () => {
     tab: "professional" | "academic" | "certifications"
   ) => {
     setTab(tab);
+  };
+
+  const [tab2, setTab2] = useState<"technical" | "soft" | "languages">(
+    "technical"
+  );
+
+  const handleSkillTabChange = (tab2: "technical" | "soft" | "languages") => {
+    setTab2(tab2);
   };
 
   return (
@@ -183,6 +312,73 @@ const About: React.FC = () => {
 
         <section id="skills">
           <h3>Habilidades</h3>
+          <div className="tabs">
+            <button
+              onClick={() => handleSkillTabChange("technical")}
+              className={tab2 === "technical" ? "active" : ""}
+            >
+              Técnicas
+            </button>
+            <button
+              onClick={() => handleSkillTabChange("soft")}
+              className={tab2 === "soft" ? "active" : ""}
+            >
+              Blandas
+            </button>
+            <button
+              onClick={() => handleSkillTabChange("languages")}
+              className={tab2 === "languages" ? "active" : ""}
+            >
+              Idiomas
+            </button>
+          </div>
+
+          <div className="skills-cards">
+            {tab2 === "technical" && (
+              <div className="skills-list">
+                {techskills.map((skill, index) => (
+                  <div key={index} className="skill">
+                    <h4>{skill.name}</h4>
+                    <ul>
+                      {skill.characteristics.map((char, index) => (
+                        <li key={index}>{char}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {tab2 === "soft" && (
+              <div className="skills-list">
+                {softskills.map((skill, index) => (
+                  <div key={index} className="skill">
+                    <h4>{skill.name}</h4>
+                    <ul>
+                      {skill.characteristics.map((char, index) => (
+                        <li key={index}>{char}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {tab2 === "languages" && (
+              <div className="skills-list">
+                {languages.map((skill, index) => (
+                  <div key={index} className="skill">
+                    <h4>{skill.name}</h4>
+                    <ul>
+                      {skill.characteristics.map((char, index) => (
+                        <li key={index}>{char}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </section>
       </div>
     </div>
