@@ -261,8 +261,8 @@ const About: React.FC = () => {
                   <span>Junio 2023 - Presente</span>
                   <p>
                     Becario de ingeniería de software en el equipo de Controles.
-                    Automatización y creación de nuevas herramientas en Python y
-                    Smartsheet.
+                    Automatización y creación de nuevas herramientas mediante
+                    varios lenguajes de programación y bases de datos.
                   </p>
                 </div>
               </div>
