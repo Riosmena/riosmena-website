@@ -1,0 +1,43 @@
+.bg-image {
+    position: fixed;
+    top: 20px;
+    z-index: 0;
+    opacity: 0.4;
+    left: 27%;
+}
+
+.projects-text {
+    margin-top: 50px;
+}
+
+.projects-text h2 span {
+    align-items: center;
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+}
+
+.projects-text h2 .space{
+    display: inline-block;
+    width:  10px;
+}
+
+.project-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+@media screen and (max-width: 768px) {
+    .bg-image {
+        left: 15%;
+        top: 20%;
+    }
+
+    .projects-text {
+        margin-top: 80px;
+    }
+
+    .project-card-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
