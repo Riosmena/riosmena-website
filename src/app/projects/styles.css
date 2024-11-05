@@ -25,9 +25,39 @@
 .project-card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-  }
+}
 
-@media screen and (max-width: 768px) {
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    z-index: 3;
+}
+
+.pagination-controls button {
+    margin: 0 10px;
+    padding: 8px 16px;
+    background-color: #333;
+    color: #fff;
+    border: solid 2px #222;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 3;
+    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.pagination-controls button:hover {
+    border: 2px solid  #ff4c4c;
+    box-shadow: 0 0 15px rgba(255, 76, 76, 0.8);
+}
+
+.pagination-controls button:disabled {
+    color: #888;
+    cursor: not-allowed;
+}
+
+@media screen and (max-width: 868px) {
     .bg-image {
         left: 15%;
         top: 20%;

@@ -163,7 +163,7 @@
 
 /* Responsive design */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 868px) {
   #about {
     margin-top: 80px;
   }
