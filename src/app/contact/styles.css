@@ -1,0 +1,131 @@
+.bg-image {
+  position: fixed;
+  top: 20px;
+  z-index: 0;
+  opacity: 0.4;
+  left: 25%;
+}
+
+.contact-container {
+  margin-top: 80px;
+}
+
+.contact-title h2 span {
+  align-items: center;
+  display: inline-flex;
+  position: relative;
+  justify-content: center;
+}
+
+.contact-title h2 .space {
+  display: inline-block;
+  width: 10px;
+}
+
+.columns {
+  display: flex;
+  gap: 80px;
+}
+
+.info {
+  background-color: #222;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  padding: 20px;
+  border: #e0e0e0 1px solid;
+}
+
+.info h3 {
+  margin-top: 5px;
+  font-size: 24px;
+}
+
+.info p {
+  display: flex;
+  font-size: 18px;
+  align-items: center;
+}
+
+.info i {
+  margin-right: 10px;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 10px;
+}
+.social-buttons a {
+  display: flex;
+  background-color: #e0e0e0;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    transform 0.3s ease;
+  z-index: 3;
+}
+.social-buttons a i {
+  margin-right: 8px;
+}
+.social-buttons a:hover {
+  background-color: #4cc3ff;
+  box-shadow: 0 0 15px rgba(76, 195, 255, 0.8);
+  transform: scale(1.05);
+}
+
+.contact-form-container {
+  background-color: #222;
+  border-radius: 10px;
+  padding: 20px;
+  width: 350px;
+  margin: 0 auto;
+  border: #e0e0e0 1px solid;
+}
+
+.contact-form-container h3 {
+  margin-top: 5px;
+  font-size: 24px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 90%;
+  padding: 10px;
+  font-size: 1rem;
+  color: #c9d1d9;
+  background-color: #222;
+  border: 1px solid #333;
+  border-radius: 5px;
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 100px;
+}
+
+@media screen and (max-width: 868px) {
+  .columns {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .info,
+  .contact-form-container {
+    width: 40rem;
+  }
+}
