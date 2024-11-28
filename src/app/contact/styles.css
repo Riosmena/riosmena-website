@@ -118,6 +118,17 @@
   height: 100px;
 }
 
+.alert {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+}
+
 @media screen and (max-width: 868px) {
   .columns {
     flex-direction: column;

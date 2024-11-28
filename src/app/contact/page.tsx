@@ -2,9 +2,67 @@
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Image from "next/image";
+import React, { useState } from "react";
 import "./styles.css";
+import { set } from "date-fns";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    topic: "",
+    message: "",
+  });
+  const [message, setMessage] = useState("");
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.topic ||
+      !formData.message
+    ) {
+      setMessage("Por favor, complete todos los campos.");
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        showTemporaryMessage("Correo enviado exitosamente.");
+        setFormData({ name: "", email: "", topic: "", message: "" });
+      } else {
+        showTemporaryMessage(
+          data.error || "Hubo un error al enviar el correo."
+        );
+      }
+    } catch (error) {
+      showTemporaryMessage("Hubo un error al enviar el correo.");
+    }
+  };
+
+  const showTemporaryMessage = (msg: string) => {
+    setMessage(msg);
+    setTimeout(() => setMessage(""), 3000);
+  };
+
   return (
     <div>
       <Image
@@ -49,8 +107,7 @@ const Contact = () => {
                   <i className="fas fa-map-marker-alt"></i> México
                 </p>
                 <p>
-                  <i className="fas fa-envelope"></i>{" "}
-                  correo_de_emiliano@yahoo.com.mx
+                  <i className="fas fa-envelope"></i> emi.riosmena@gmail.com
                 </p>
                 <p>
                   <i className="fas fa-phone"></i> (+52) 442 219 9302
@@ -88,14 +145,17 @@ const Contact = () => {
             <section id="contact-form">
               <div className="contact-form-container">
                 <h3>Contactar</h3>
-                <form className="contact-form">
+                <form onSubmit={handleSubmit} className="contact-form">
                   <div className="form-group">
                     <label htmlFor="name">Nombre</label>
                     <input
                       type="text"
                       id="name"
                       name="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       placeholder="Tu nombre"
+                      required
                     />
                   </div>
                   <div className="form-group">
@@ -104,7 +164,10 @@ const Contact = () => {
                       type="email"
                       id="email"
                       name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="Tu correo"
+                      required
                     />
                   </div>
                   <div className="form-group">
@@ -113,7 +176,10 @@ const Contact = () => {
                       type="text"
                       id="topic"
                       name="topic"
+                      value={formData.topic}
+                      onChange={handleChange}
                       placeholder="Asunto del mensaje"
+                      required
                     />
                   </div>
                   <div className="form-group">
@@ -121,12 +187,16 @@ const Contact = () => {
                     <textarea
                       id="message"
                       name="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       placeholder="Tu mensaje"
+                      required
                     ></textarea>
                   </div>
                   <button type="submit" className="submit-btn">
                     Enviar
                   </button>
+                  {message && <div className="alert">{message}</div>}
                 </form>
               </div>
             </section>
