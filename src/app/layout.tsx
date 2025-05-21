@@ -1,8 +1,11 @@
-import { FC, ReactNode } from "react";
+"use client";
+
+import { FC, ReactNode, useState } from "react";
 import "./globals.css";
-import { es } from "date-fns/locale";
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <html lang="es">
       <head>
@@ -11,18 +14,34 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
       <body>
         <header>
           <nav>
-            <ul>
+            <button
+              className="hamburger"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Menú"
+            >
+              {isMenuOpen ? "✖" : "☰"}
+            </button>
+
+            <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
               <li>
-                <a href="/">Inicio</a>
+                <a href="/" onClick={() => setIsMenuOpen(false)}>
+                  Inicio
+                </a>
               </li>
               <li>
-                <a href="/about">Acerca de</a>
+                <a href="/about" onClick={() => setIsMenuOpen(false)}>
+                  Acerca de
+                </a>
               </li>
               <li>
-                <a href="/projects">Proyectos</a>
+                <a href="/projects" onClick={() => setIsMenuOpen(false)}>
+                  Proyectos
+                </a>
               </li>
               <li>
-                <a href="/contact">Contacto</a>
+                <a href="/contact" onClick={() => setIsMenuOpen(false)}>
+                  Contacto
+                </a>
               </li>
             </ul>
             <div className="lang">

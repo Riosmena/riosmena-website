@@ -52,13 +52,13 @@
   border: 5px solid #e0e0e0;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  width: 90%; 
+  width: 90%;
   cursor: pointer;
   transition: color 0.3s ease, transform 0.3s ease-in-out, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  border: 5px solid  #4cc3ff;
+  border: 5px solid #4cc3ff;
   box-shadow: 0 0 15px rgba(76, 195, 255, 0.8);
   transform: scale(1.02);
 }
@@ -92,7 +92,6 @@
   width: 100%;
 }
 
-
 .skill {
   background-color: #222;
   color: #e0e0e0;
@@ -101,7 +100,8 @@
   border: 5px solid #e0e0e0;
   width: 150px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out, border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, border 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
 }
 
 .skill h4 {
@@ -111,7 +111,7 @@
 
 .skill:hover {
   transform: scale(1.02);
-  border: 5px solid  #ff4c4c;
+  border: 5px solid #ff4c4c;
   box-shadow: 0 0 15px rgba(255, 76, 76, 0.8);
 }
 
@@ -163,7 +163,7 @@
 
 /* Responsive design */
 
-@media screen and (max-width: 868px) {
+@media screen and (max-width: 1300px) {
   #about {
     margin-top: 80px;
   }
@@ -205,5 +205,90 @@
 
   .skill {
     width: 80%;
+  }
+}
+
+
+@media screen and (max-width: 640px) {
+  .columns {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .columns h3,
+  .columns h4 {
+    text-align: center;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .card-content {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .skills-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .skill {
+    width: 90%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .tabs {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tabs button {
+    width: 80%;
+    max-width: 250px;
+  }
+
+  .skills-cards {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .columns h3 {
+    font-size: 1.6em;
+  }
+
+  .columns h4 {
+    font-size: 1em;
+  }
+
+  .skill h4 {
+    font-size: 1.2em;
+  }
+
+  .card-content p {
+    font-size: 1em;
+  }
+
+  .card-content span {
+    font-size: 0.9em;
+  }
+
+  .tabs button {
+    font-size: 13px;
+  }
+
+  .skill li {
+    font-size: 0.9em;
   }
 }

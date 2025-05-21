@@ -37,19 +37,21 @@ const Home = () => (
           <span>a</span>
         </h1>
       </div>
-      <div id="typewriter">
-        <span>
-          <Typewriter
-            texts={[
-              "Ingeniero de Software",
-              "Atleta",
-              "Músico",
-              "Entusiasta de la tecnología",
-            ]}
-            speed={100}
-            delay={2000}
-          />
-        </span>
+      <div>
+        <div id="typewriter">
+          <span>
+            <Typewriter
+              texts={[
+                "Ingeniero de Software",
+                "Atleta",
+                "Músico",
+                "Entusiasta de la tecnología",
+              ]}
+              speed={100}
+              delay={2000}
+            />
+          </span>
+        </div>
       </div>
       <div className="image-container">
         <Image
@@ -143,11 +145,6 @@ const Home = () => (
         />
       </div>
     </section>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
     <section id="Projects">
       <div className="projects-text">
         <h2>

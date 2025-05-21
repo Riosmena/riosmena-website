@@ -10,7 +10,7 @@ interface TypewriterProps {
 
 const Typewriter: React.FC<TypewriterProps> = ({
   texts,
-  speed = 100,
+  speed = 200,
   delay = 2000,
 }) => {
   const [index, setIndex] = useState(0);

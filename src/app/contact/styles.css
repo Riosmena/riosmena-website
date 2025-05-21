@@ -129,7 +129,11 @@
   text-align: center;
 }
 
-@media screen and (max-width: 868px) {
+@media screen and (max-width: 1024px) {
+  .bg-image {
+    left: 15%;
+    top: 20%;
+  }
   .columns {
     flex-direction: column;
     gap: 20px;
@@ -139,4 +143,99 @@
   .contact-form-container {
     width: 40rem;
   }
+}
+
+@media screen and (max-width: 640px) {
+  .columns {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .contact-title h2 {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+
+  .info,
+  .contact-form-container {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .info p {
+    font-size: 16px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .social-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-buttons a {
+    justify-content: center;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+  }
+
+  .contact-form label {
+    text-align: left;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+  }
+
+  .contact-form-container h3 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contact-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .info h3,
+  .contact-form-container h3 {
+    font-size: 20px;
+  }
+
+  .info p {
+    font-size: 14px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+
+  .social-buttons a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+    
+  .contact-form input,
+  .contact-form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-title h2 span {
+    font-size: 1.5rem;
+  }
+}
+
+.contact-form input,
+.contact-form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
 }
